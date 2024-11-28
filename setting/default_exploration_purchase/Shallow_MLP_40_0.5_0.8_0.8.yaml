@@ -1,0 +1,58 @@
+save_prefix: default_exploration_purchase
+
+target_dataset_name: PURCHASE-100
+target_category_len: 100
+target_total_index_num: 40000
+target_select_num: 40000
+target_target_shadow_rate: 0.5
+target_target_train_rate: 0.8
+target_shadow_train_rate: 0.8
+target_split_num: 40
+target_random_seed_for_dataset: 2023
+target_fix_seed: 1
+
+shadow_dataset_name: PURCHASE-100
+shadow_category_len: 100
+shadow_total_index_num: 40000
+shadow_select_num: 40000
+shadow_target_shadow_rate: 0.5
+shadow_target_train_rate: 0.8
+shadow_shadow_train_rate: 0.8
+shadow_split_num: 40
+shadow_random_seed_for_dataset: 2023
+shadow_fix_seed: 1
+
+target_metric: accuracy
+target_epoch_num: 200
+target_batch_size: 16
+target_learning_rate: 0.001
+target_model_name: model_purchase_Shallow_MLP
+target_criterion: CrossEntropyLoss
+target_weight_decay: 0.0000001
+target_momentum: 0.9
+target_optimizer: Adam
+target_model_select_strategy: lowest_gap
+
+
+shadow_metric: accuracy
+shadow_epoch_num: 200
+shadow_batch_size: 16
+shadow_learning_rate: 0.001
+shadow_model_name: model_purchase_Shallow_MLP
+shadow_criterion: CrossEntropyLoss
+shadow_weight_decay: 0.0000001
+shadow_momentum: 0.9
+shadow_optimizer: Adam
+shadow_model_select_strategy: lowest_gap
+
+
+relabelled_shadow_metric: accuracy
+relabelled_shadow_epoch_num: 200
+relabelled_shadow_batch_size: 16
+relabelled_shadow_learning_rate: 0.001
+relabelled_shadow_model_name: model_purchase_Shallow_MLP
+relabelled_shadow_criterion: CrossEntropyLoss
+relabelled_shadow_weight_decay: 0.0000001
+relabelled_shadow_momentum: 0.9
+relabelled_shadow_optimizer: Adam
+relabelled_shadow_model_select_strategy: lowest_gap
